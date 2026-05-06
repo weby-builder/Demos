@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>טמבורית העיר | חנות כלי עבודה וחומרי בניין</title>
+  <meta name="description" content="טמבורית העיר - חנות כלי עבודה, חומרי בניין וציוד מקצועי. כלי חשמל, צבעים, אינסטלציה, חשמל ועוד. משלוח מהיר לכל הארץ." />
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
+</head>
+<body>
+
+<!-- ===================== ANNOUNCEMENT BAR ===================== -->
+<div class="announcement-bar">
+  🔧 משלוח חינם על הזמנות מעל <span>₪299</span> • מבצע השבוע: <span>20% הנחה על כלי Bosch</span> • קוד: <span>TAMB24</span> 🔧
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+  <nav class="navbar">
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="white" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <span class="logo-name">טמבורית העיר</span>
+        <span class="logo-tagline">כלי עבודה וחומרי בניין</span>
+      </div>
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="#categories">קטגוריות</a></li>
+      <li><a href="#products">מוצרים</a></li>
+      <li><a href="#about">אודות</a></li>
+      <li><a href="#contact">צור קשר</a></li>
+    </ul>
+
+    <!-- Nav Actions -->
+    <div class="nav-actions">
+      <!-- Search -->
+      <button class="nav-icon-btn" title="חיפוש" onclick="showToast('🔍 חיפוש בקרוב...')">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <!-- Cart -->
+      <button class="nav-icon-btn" id="cart-btn" title="עגלת קניות">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="cart-badge" id="cart-badge">0</span>
+      </button>
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="תפריט">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ===================== MOBILE MENU ===================== -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="#categories">קטגוריות</a>
+  <a href="#products">מוצרים</a>
+  <a href="#about">אודות</a>
+  <a href="#contact">צור קשר</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content container">
+    <div class="hero-badge">מקצועי • אמין • זמין</div>
+    <h1>הכלים הנכונים<br>לכל <em>עבודה</em></h1>
+    <p>כלי עבודה, חומרי בניין וציוד מקצועי לקבלנים, אנשי מקצוע ואנשי DIY. מבחר עצום, מחירים תחרותיים, שירות שאפשר לסמוך עליו.</p>
+    <div class="hero-cta">
+      <a href="#products" class="btn btn-primary">לקטלוג המוצרים</a>
+      <a href="#about" class="btn btn-outline">הכירו אותנו</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">5,000+</div>
+      <div class="stat-label">פריטים במלאי</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">30K+</div>
+      <div class="stat-label">לקוחות מרוצים</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">20+</div>
+      <div class="stat-label">שנות ניסיון</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INFO STRIP ===================== -->
+<div class="info-strip">
+  <div class="info-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <rect x="1" y="3" width="15" height="13" rx="1"/>
+      <path d="M16 8h4l3 5v3h-7V8zM5.5 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM18.5 21a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+    </svg>
+    <div class="info-item-text">
+      <h4>משלוח מהיר</h4>
+      <p>עד 3 ימי עסקים בכל הארץ</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    </svg>
+    <div class="info-item-text">
+      <h4>אחריות יצרן</h4>
+      <p>אחריות מלאה על כל המוצרים</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M1 4h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+    </svg>
+    <div class="info-item-text">
+      <h4>החזרה קלה</h4>
+      <p>30 יום להחלפה או החזר כסף</p>
+    </div>
+  </div>
+  <div class="info-item">
+    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.41a16 16 0 0 0 5.58 5.58l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <div class="info-item-text">
+      <h4>ייעוץ טכני</h4>
+      <p>א'–ו' 8:00–15:00</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CATEGORIES ===================== -->
+<section class="categories" id="categories">
+  <div class="container">
+    <div class="categories-header">
+      <h2 class="section-title reveal">קטגוריות</h2>
+      <p class="section-subtitle reveal delay-1">כל מה שצריך לעבודה, לשיפוץ ולבנייה</p>
+    </div>
+
+    <div class="categories-grid">
+      <!-- Large card -->
+      <div class="category-card reveal delay-1">
+        <div class="category-img cat-power"
+          style="background-image: url('images/categories/cat-power.jpg')"></div>
+        <div class="category-overlay">
+          <div>
+            <div class="category-name">כלי חשמל</div>
+            <div class="category-count">+320 מוצרים</div>
+            <a href="#" class="category-link">
+              גלה עכשיו
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <line x1="19" y1="12" x2="5" y2="12"/>
+                <polyline points="12,19 5,12 12,5"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="category-card reveal delay-1">
+        <div class="category-img cat-hand"
+          style="background-image: url('images/categories/cat-hand.jpg')"></div>
+        <div class="category-overlay">
+          <div>
+            <div class="category-name">כלי יד</div>
+            <div class="category-count">+280 מוצרים</div>
+            <a href="#" class="category-link">גלה עכשיו →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card reveal delay-2">
+        <div class="category-img cat-paint"
+          style="background-image: url('images/categories/cat-paint.jpg')"></div>
+        <div class="category-overlay">
+          <div>
+            <div class="category-name">צבעים וציפויים</div>
+            <div class="category-count">+190 מוצרים</div>
+            <a href="#" class="category-link">גלה עכשיו →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card reveal delay-2">
+        <div class="category-img cat-electric"
+          style="background-image: url('images/categories/cat-electric.jpg')"></div>
+        <div class="category-overlay">
+          <div>
+            <div class="category-name">חשמל ותאורה</div>
+            <div class="category-count">+215 מוצרים</div>
+            <a href="#" class="category-link">גלה עכשיו →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="category-card reveal delay-3">
+        <div class="category-img cat-plumbing"
+          style="background-image: url('images/categories/cat-plumbing.jpg')"></div>
+        <div class="category-overlay">
+          <div>
+            <div class="category-name">אינסטלציה</div>
+            <div class="category-count">+170 מוצרים</div>
+            <a href="#" class="category-link">גלה עכשיו →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="products-header reveal">
+      <div>
+        <h2 class="section-title" style="margin-bottom:6px">מוצרים נבחרים</h2>
+        <p class="section-subtitle" style="margin-bottom:0">הנמכרים ביותר החודש</p>
+      </div>
+      <a href="#" class="view-all-link">הצג הכל</a>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs reveal delay-1">
+      <button class="filter-tab active" data-filter="all">הכל</button>
+      <button class="filter-tab" data-filter="power">כלי חשמל</button>
+      <button class="filter-tab" data-filter="hand">כלי יד</button>
+      <button class="filter-tab" data-filter="paint">צבעים</button>
+      <button class="filter-tab" data-filter="electric">חשמל</button>
+      <button class="filter-tab" data-filter="plumbing">אינסטלציה</button>
+      <button class="filter-tab" data-filter="safety">בטיחות</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card reveal delay-1" data-category="power">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/bosch-drill-18v.jpg')"></div>
+          <div class="product-badges">
+            <span class="badge badge-red">מבצע</span>
+          </div>
+          <div class="product-actions">
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Bosch</div>
+          <div class="product-name">מקדחה-מברגה GSR 18V ליתיום 2 סוללות</div>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(312)</span>
+          </div>
+          <div class="product-price-row">
+            <div>
+              <span class="product-price-old">₪849</span>
+              <span class="product-price">₪699</span>
+            </div>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card reveal delay-2" data-category="hand">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/hammer-stanly.png')"></div>
+          <div class="product-badges">
+            <span class="badge badge-gold">חדש</span>
+          </div>
+          <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="הוסף למועדפים">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Stanley</div>
+          <div class="product-name">פטיש מנעול 450 גר' ידית פייבר גלס</div>
+          <div class="product-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-count">(187)</span>
+          </div>
+          <div class="product-price-row">
+            <span class="product-price">₪89</span>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card reveal delay-3" data-category="power">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/bosch-disk.jpg')"></div>
+          <div class="product-badges">
+            <span class="badge badge-red">מבצע</span>
+          </div>
+          <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="הוסף למועדפים">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Bosch</div>
+          <div class="product-name">משחזת זווית 125 מ"מ 850W DWE8205</div>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(241)</span>
+          </div>
+          <div class="product-price-row">
+            <div>
+              <span class="product-price-old">₪449</span>
+              <span class="product-price">₪369</span>
+            </div>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card reveal delay-4" data-category="paint">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/white-paint.jpg')"></div>
+          <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="הוסף למועדפים">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Tambour</div>
+          <div class="product-name">צבע קיר לפנים מט לבן 18 ליטר</div>
+          <div class="product-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-count">(98)</span>
+          </div>
+          <div class="product-price-row">
+            <span class="product-price">₪189</span>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card reveal delay-1" data-category="electric">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/philips-light.jpg')"></div>
+          <div class="product-badges">
+            <span class="badge badge-gold">בסט סלר</span>
+          </div>
+          <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="הוסף למועדפים">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Philips</div>
+          <div class="product-name">נורת LED פנל שקועה 18W קור וויט</div>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(154)</span>
+          </div>
+          <div class="product-price-row">
+            <div>
+              <span class="product-price-old">₪65</span>
+              <span class="product-price">₪49</span>
+            </div>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card reveal delay-2" data-category="hand">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/stenly-meter.jpg')"></div>
+          <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="הוסף למועדפים">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Stanley</div>
+          <div class="product-name">סרט מדידה FatMax 8 מטר מקצועי</div>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(276)</span>
+          </div>
+          <div class="product-price-row">
+            <span class="product-price">₪79</span>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 7 -->
+      <div class="product-card reveal delay-3" data-category="plumbing">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/grohe-faucet.jpg')"></div>
+          <div class="product-badges">
+            <span class="badge badge-red">חדש</span>
+          </div>
+          <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="הוסף למועדפים">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Grohe</div>
+          <div class="product-name">ברז מטבח פיה גבוהה כרום מבריק</div>
+          <div class="product-rating">
+            <span class="stars">★★★★☆</span>
+            <span class="rating-count">(63)</span>
+          </div>
+          <div class="product-price-row">
+            <span class="product-price">₪449</span>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 8 -->
+      <div class="product-card reveal delay-4" data-category="safety">
+        <div class="product-image-wrap">
+          <div class="product-img" style="background-image:url('images/products/3m-helmet.png')"></div>
+          <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="הוסף למועדפים">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+              </svg>
+            </button>
+            <button class="action-btn" title="הצג מהיר" onclick="showToast('תצוגה מהירה בקרוב')">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="product-brand">3M</div>
+          <div class="product-name">קסדת בטיחות מקצועית</div>
+          <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">(89)</span>
+          </div>
+          <div class="product-price-row">
+            <div>
+              <span class="product-price-old">₪95</span>
+              <span class="product-price">₪74</span>
+            </div>
+            <button class="add-to-cart">+ הוסף</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /products-grid -->
+  </div><!-- /container -->
+</section>
+
+<!-- ===================== PROMO BANNER ===================== -->
+<div class="promo-banner">
+  <div class="promo-text">
+    <div class="promo-label">🔥 מבצע מוגבל בזמן</div>
+    <h2 class="promo-title">עד <span>40% הנחה</span><br>על כלי Bosch</h2>
+    <p class="promo-desc">מברגות, קדחים, משחזות ומסורים – כל קולקציית Bosch במחירים שלא תמצאו בשום מקום אחר.</p>
+    <a href="#products" class="btn btn-primary" style="margin-top:24px">ניצול המבצע עכשיו</a>
+  </div>
+
+  <div class="countdown">
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-hours">00</div>
+      <div class="countdown-label">שעות</div>
+    </div>
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-minutes">00</div>
+      <div class="countdown-label">דקות</div>
+    </div>
+    <div class="countdown-unit">
+      <div class="countdown-number" id="cd-seconds">00</div>
+      <div class="countdown-label">שניות</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal-left">
+        <img class="about-img" 
+          src="images/about-studio.jpg"
+          alt="חנות טמבורית העיר"
+          onerror="this.style.display='none'" />
+      </div>
+
+      <div class="about-content reveal-right">
+        <div class="about-badge">הסיפור שלנו</div>
+        <h2 class="section-title">מעל 20 שנה של<br>מקצועיות ואמינות</h2>
+        <p class="about-text">
+          טמבורית העיר נוסדה ב-2005 ומאז שירתה דורות של קבלנים, אנשי מקצוע ובעלי בתים.
+        </p>
+        <p class="about-text">
+          הצוות שלנו מורכב מאנשי מקצוע עם ניסיון מעשי שיודעים לתת לכם ייעוץ אמיתי – לא רק למכור. בין אם אתם קבלן ותיק או עושים שיפוץ ראשון – אנחנו כאן בשבילכם.
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon">🔩</div>
+            <div class="feature-text">
+              <h4>מוצרים מקצועיים</h4>
+              <p>מותגים מובילים מהעולם</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon">💬</div>
+            <div class="feature-text">
+              <h4>ייעוץ טכני</h4>
+              <p>צוות מומחים מנוסים</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon">🚚</div>
+            <div class="feature-text">
+              <h4>משלוח מהיר</h4>
+              <p>עד 3 ימי עסקים</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon">🏆</div>
+            <div class="feature-text">
+              <h4>אחריות מלאה</h4>
+              <p>30 יום להחזרה</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-primary">צור איתנו קשר</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BRANDS ===================== -->
+<div class="brands">
+  <div class="container">
+    <h3>המותגים המובילים אצלנו</h3>
+    <div class="brands-track">
+      <span class="brand-item">Bosch</span>
+      <span class="brand-item">DeWalt</span>
+      <span class="brand-item">Stanley</span>
+      <span class="brand-item">Makita</span>
+      <span class="brand-item">Grohe</span>
+      <span class="brand-item">3M</span>
+      <span class="brand-item">Hilti</span>
+      <span class="brand-item">Philips</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="testimonials-header">
+      <h2 class="section-title reveal">מה אומרים עלינו</h2>
+      <p class="section-subtitle reveal delay-1">קבלנים ואנשי מקצוע שסומכים עלינו כבר שנים</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          קונה מהם כבר 15 שנה. המחירים תחרותיים, המלאי תמיד מלא והצוות יודע לתת ייעוץ אמיתי. כשאני מגיע עם שאלה טכנית – מקבל תשובה מקצועית, לא שיחת מכירה.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">מ</div>
+          <div>
+            <div class="author-name">יוסי אביב</div>
+            <div class="author-role">קבלן בניין, 20 שנות ניסיון</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal delay-2">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          עשיתי שיפוץ מלא בדירה ורכשתי מהם את כל הציוד. המשלוח הגיע תוך יומיים, הכל מאורז מעולה. כשהייתה בעיה קטנה – פתרו אותה בלי שאלות.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">ד</div>
+          <div>
+            <div class="author-name">רונית שמש</div>
+            <div class="author-role">ביצעה שיפוץ, תל אביב</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal delay-3">
+        <div class="testimonial-quote">"</div>
+        <p class="testimonial-text">
+          אני חשמלאי ומזמין אצלהם סדרות שלמות של ציוד. המחירים לקבלנים מצוינים, הזמינות מעולה. לא זזתי לשום ספק אחר כבר 8 שנים.
+        </p>
+        <div class="testimonial-author">
+          <div class="author-avatar">ש</div>
+          <div>
+            <div class="author-name">אלון מזרחי</div>
+            <div class="author-role">חשמלאי מוסמך, חיפה</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NEWSLETTER ===================== -->
+<div class="newsletter" id="newsletter">
+  <div class="container">
+    <h2 class="section-title reveal">הישארו מעודכנים</h2>
+    <p class="newsletter-sub reveal delay-1">הירשמו וקבלו 10% הנחה על ההזמנה הראשונה + מבצעים בלעדיים לחברי המועדון</p>
+    <form class="newsletter-form reveal delay-2" id="newsletter-form">
+      <input type="email" placeholder="הכניסו את כתובת המייל שלכם..." required />
+      <button type="submit" class="btn btn-primary">הרשמה</button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+<footer id="contact">
+  <div class="footer-grid">
+    <!-- Brand -->
+    <div class="footer-brand">
+      <span class="logo-name">טמבורית העיר</span>
+      <span class="logo-tagline">כלי עבודה וחומרי בניין</span>
+      <p class="footer-about">
+        חנות כלי עבודה וחומרי בניין מקצועיים עם ניסיון של מעל 20 שנה. שירות קבלנים, אנשי מקצוע ובעלי בתים ברחבי ישראל.
+      </p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Instagram">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="social-link" title="Facebook">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="social-link" title="YouTube">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="#" class="social-link" title="TikTok">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>קישורים מהירים</h4>
+      <ul>
+        <li><a href="#hero">דף הבית</a></li>
+        <li><a href="#categories">קטגוריות</a></li>
+        <li><a href="#products">מוצרים</a></li>
+        <li><a href="#about">אודות</a></li>
+        <li><a href="#">מחירון מבצעים</a></li>
+        <li><a href="#">מחירון קבלנים</a></li>
+      </ul>
+    </div>
+
+    <!-- Customer Service -->
+    <div class="footer-col">
+      <h4>שירות לקוחות</h4>
+      <ul>
+        <li><a href="#">שאלות נפוצות</a></li>
+        <li><a href="#">מדיניות משלוחים</a></li>
+        <li><a href="#">החזרות והחלפות</a></li>
+        <li><a href="#">מעקב הזמנה</a></li>
+        <li><a href="#">אחריות ושירות</a></li>
+        <li><a href="#">תנאי שימוש</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col" id="contact-info">
+      <h4>צור קשר</h4>
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span>רחוב לדוגמא 88, רמת השרון</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.41a16 16 0 0 0 5.58 5.58l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        <span>03-000-1234</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span>info@tamburiyat-haeir.co.il</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12,6 12,12 16,14"/>
+        </svg>
+        <span>א'–ה' 15:00–08:00 </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 טמבורית העיר – כלי עבודה וחומרי בניין. כל הזכויות שמורות.</p>
+    <div class="footer-bottom-links">
+      <a href="#">מדיניות פרטיות</a>
+      <a href="#">תנאי שימוש</a>
+      <a href="#">נגישות</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== CART SIDEBAR ===================== -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-sidebar" id="cart-sidebar">
+  <div class="cart-header">
+    <h3 class="cart-title">עגלת קניות (<span id="cart-count-text">0 פריטים</span>)</h3>
+    <button class="cart-close" id="cart-close">✕</button>
+  </div>
+  <div class="cart-body" id="cart-body">
+    <!-- Rendered by JS -->
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>סה"כ:</span>
+      <span id="cart-subtotal-amount">₪0</span>
+    </div>
+    <button class="cart-checkout-btn" id="cart-checkout-btn">מעבר לתשלום</button>
+  </div>
+</div>
+
+<!-- ===================== BACK TO TOP ===================== -->
+<button class="back-to-top" id="back-to-top" title="חזרה לראש הדף">
+  <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+    <polyline points="18,15 12,9 6,15"/>
+  </svg>
+</button>
+
+<!-- Toast (created dynamically by JS) -->
+
+<script src="js/main.js"></script>
+</body>
+</html>
