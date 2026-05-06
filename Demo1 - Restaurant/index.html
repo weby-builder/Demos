@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ביסטרו הים — מטבח ים תיכוני</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__logo" style="background-image: url('images/logo.png');"></div>
+    <ul class="nav__links">
+      <li><a href="#about">אודות</a></li>
+      <li><a href="#menu">תפריט</a></li>
+      <li><a href="#gallery">גלריה</a></li>
+      <li><a href="#contact">צור קשר</a></li>
+    </ul>
+    <button class="nav__cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">הזמן שולחן</button>
+    <button class="nav__burger" id="burger" aria-label="פתח תפריט">☰</button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu__close" id="closeMenu">✕</button>
+    <ul>
+      <li><a href="#about" class="mm-link">אודות</a></li>
+      <li><a href="#menu" class="mm-link">תפריט</a></li>
+      <li><a href="#gallery" class="mm-link">גלריה</a></li>
+      <li><a href="#contact" class="mm-link">צור קשר</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg__img" style="background-image: url('images/hero.png');"></div>
+    <div class="hero__content">
+      <p class="hero__sub">מטבח ים תיכוני</p>
+      <h1 class="hero__title">טעמים<br/>שמדברים<br/>אליך</h1>
+      <p class="hero__desc">חומרי גלם טריים, מתכונים של דורות, אוירה שלא תשכחו</p>
+      <div class="hero__btns">
+        <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">לתפריט</button>
+        <button class="btn--outline" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">הזמן מקום</button>
+      </div>
+    </div>
+    <div class="hero__scroll">↓</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about__text">
+      <span class="label">הסיפור שלנו</span>
+      <h2>בישול מהלב,<br/>דבר ראשון</h2>
+      <p>ביסטרו הים נפתח ב־2018 מתוך אהבה עמוקה למטבח הים תיכוני. אנחנו מאמינים שאוכל טוב מתחיל בשוק — בחירת הירקות הטריים, הדגים שנדגו הבוקר, השמן שנסחט השבוע.</p>
+      <p>השף ישראל ישראלי, יליד יפו, שב ממסעות קולינריים בצרפת, מרוקו ואיטליה עם תרמיל מלא השראה ולב מלא בית.</p>
+      <div class="about__stats">
+        <div><strong>8+</strong><span>שנות פעילות</span></div>
+        <div><strong>40+</strong><span>מנות בתפריט</span></div>
+        <div><strong>★4.9</strong><span>דירוג ממוצע</span></div>
+      </div>
+    </div>
+    <div class="about__img">
+      <div class="about__img-inner">
+        <img src="images/about.jpg" alt="About Us">
+      </div>
+      <div class="about__badge">Since 2018</div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="section-header">
+      <span class="label">מה אנחנו מציעים</span>
+      <h2>התפריט שלנו</h2>
+    </div>
+    <div class="menu-tabs">
+      <button class="tab active" data-cat="starters">ראשונות</button>
+      <button class="tab" data-cat="mains">עיקריות</button>
+      <button class="tab" data-cat="desserts">קינוחים</button>
+      <button class="tab" data-cat="drinks">שתייה</button>
+    </div>
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-header">
+      <span class="label">אוירה ומראה</span>
+      <h2>גלריה</h2>
+    </div>
+    <div class="gallery__grid">
+      <div class="gal-item gal-item--tall" style="background-image: url('images/gal1.jpg');"></div>
+      <div class="gal-item" style="background-image: url('images/gal2.jpg');"></div>
+      <div class="gal-item" style="background-image: url('images/gal3.jpg');"></div>
+      <div class="gal-item gal-item--wide" style="background-image: url('images/gal4.jpg');"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-header">
+      <span class="label">מה אומרים עלינו</span>
+      <h2>ביקורות</h2>
+    </div>
+    <div class="testimonials__grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"חוויה קולינרית מדהימה. המנה של הסמבוסק עם לבן הוא חובה מוחלטת!"</p>
+        <span>— מיכל ג', תל אביב</span>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"המקום הכי רומנטי בעיר. האוכל מצוין, השירות חם ואוהב."</p>
+        <span>— אורי ו', הרצליה</span>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>"הדג שלהם פשוט בלתי נתפס. חוזרים כל שבועיים לפחות!"</p>
+        <span>— יובל ק', תל אביב</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact__info">
+      <span class="label">בואו לבקר</span>
+      <h2>הגיעו אלינו</h2>
+      <div class="info-item">
+        <span class="icon">📍</span>
+        <div><strong>כתובת</strong><p>רחוב לדוגמא 42, תל אביב</p></div>
+      </div>
+      <div class="info-item">
+        <span class="icon">🕐</span>
+        <div><strong>שעות פתיחה</strong><p>א׳–ה׳: 12:00–23:00<br/>ו׳–ש׳: 11:00–00:00</p></div>
+      </div>
+      <div class="info-item">
+        <span class="icon">📞</span>
+        <div><strong>טלפון</strong><p><a href="tel:+97230001234">03-000-1234</a></p></div>
+      </div>
+      <div class="info-item">
+        <span class="icon">✉️</span>
+        <div><strong>אימייל</strong><p><a href="demo@bistrohayam.com">demo@bistrohayam.com</a></p></div>
+      </div>
+    </div>
+    <div class="contact__form">
+      <h3>הזמינו שולחן</h3>
+      <div class="form-group">
+        <label>שם מלא</label>
+        <input type="text" placeholder="ישראל ישראלי" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>טלפון</label>
+          <input type="tel" placeholder="050-000-0000" />
+        </div>
+        <div class="form-group">
+          <label>מספר סועדים</label>
+          <input type="number" min="1" max="20" placeholder="2" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>תאריך</label>
+          <input type="date" />
+        </div>
+        <div class="form-group">
+          <label>שעה</label>
+          <input type="time" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>הערות מיוחדות</label>
+        <textarea placeholder="אלרגיות, ישיבה מועדפת, אירוע מיוחד..."></textarea>
+      </div>
+      <button class="submit-btn" onclick="handleSubmit()">שלח הזמנה</button>
+      <div id="formSuccess" class="form-success" style="display:none">✅ תודה! נחזור אליך בהקדם לאישור.</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <h3>ביסטרו הים</h3>
+        <p>מטבח ים תיכוני עכשווי<br/>תל אביב</p>
+      </div>
+      <div class="footer__links">
+        <h4>ניווט מהיר</h4>
+        <ul>
+          <li><a href="#about">אודות</a></li>
+          <li><a href="#menu">תפריט</a></li>
+          <li><a href="#gallery">גלריה</a></li>
+          <li><a href="#contact">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer__social">
+        <h4>עקבו אחרינו</h4>
+        <div class="social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 ביסטרו הים. כל הזכויות שמורות.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
