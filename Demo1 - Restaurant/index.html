@@ -146,39 +146,65 @@
         <div><strong>אימייל</strong><p><a href="demo@bistrohayam.com">demo@bistrohayam.com</a></p></div>
       </div>
     </div>
-    <div class="contact__form">
+    <form class="contact__form" id="contactForm">
       <h3>הזמינו שולחן</h3>
+      <input type="hidden" name="access_key" value="48af57ed-ba85-4437-8567-9a7d5999b8c4">
+      <input type="hidden" name="subject" value="הזמנת שולחן חדשה">
+      <input type="hidden" name="from_name" value="Bistro Website">
+      <input type="checkbox" name="botcheck" style="display:none">
       <div class="form-group">
         <label>שם מלא</label>
-        <input type="text" placeholder="ישראל ישראלי" />
+        <input type="text" name="name" placeholder="ישראל ישראלי" />
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>טלפון</label>
-          <input type="tel" placeholder="050-000-0000" />
+          <input type="tel" name="phone" placeholder="050-000-0000" />
         </div>
         <div class="form-group">
           <label>מספר סועדים</label>
-          <input type="number" min="1" max="20" placeholder="2" />
+          <input type="number" name="guests" min="1" max="20" placeholder="2" />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>תאריך</label>
-          <input type="date" />
+          <input type="date" name="date" id="date"/>
         </div>
         <div class="form-group">
           <label>שעה</label>
-          <input type="time" />
+          <div class="time-selects">
+            <select name="minute" id="minuteSelect">
+              <option value="00">00</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="45">45</option>
+            </select>
+            <select name="hour" id="hourSelect">
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+            </select>
+            
+          </div>
         </div>
       </div>
       <div class="form-group">
         <label>הערות מיוחדות</label>
-        <textarea placeholder="אלרגיות, ישיבה מועדפת, אירוע מיוחד..."></textarea>
+        <textarea name="message" placeholder="אלרגיות, ישיבה מועדפת, אירוע מיוחד..."></textarea>
       </div>
-      <button class="submit-btn" onclick="handleSubmit()">שלח הזמנה</button>
+      <button type="button" class="submit-btn" onclick="handleSubmit()">שלח הזמנה</button>
       <div id="formSuccess" class="form-success" style="display:none">✅ תודה! נחזור אליך בהקדם לאישור.</div>
-    </div>
+    </form>
   </section>
 
   <!-- FOOTER -->
