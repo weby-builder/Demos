@@ -98,37 +98,131 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-/* ===========================
-   FORM SUBMIT
-=========================== */
-function handleSubmit() {
-  const inputs = document.querySelectorAll('.contact__form input, .contact__form textarea');
-  let valid = true;
+/* ===========
+   TIME LIMITS
+============== */ 
+const dateInput = document.getElementById('date');
+const hourSelect = document.getElementById('hourSelect');
 
-  inputs.forEach(input => {
-    if (!input.value.trim()) {
-      input.style.borderColor = '#e05050';
-      valid = false;
-    } else {
-      input.style.borderColor = '';
+function updateHours() {
+    const selectedDate = new Date(dateInput.value);
+    const day = selectedDate.getDay();
+
+    // מנקה שעות קודמות
+    hourSelect.innerHTML = '';
+    let startHour;
+    let endHour;
+    // Friday
+    if (day === 5) {
+        startHour = 11;
+        endHour = 23;
     }
-  });
 
-  if (!valid) return;
+    // Saturday
+    else if (day === 6) {
+        startHour = 11;
+        endHour = 23;
+    }
 
-  const btn = document.querySelector('.submit-btn');
-  btn.textContent = 'שולח...';
-  btn.disabled = true;
-  sendEmail
+    // Regular days
+    else {
+        startHour = 12;
+        endHour = 22;
+    }
 
-  setTimeout(() => {
-    btn.textContent = 'שלח הזמנה';
-    btn.disabled = false;
-    inputs.forEach(i => i.value = '');
-    document.getElementById('formSuccess').style.display = 'block';
-    setTimeout(() => {
-      document.getElementById('formSuccess').style.display = 'none';
-    }, 5000);
-  }, 1200);
+    // יוצר options
+    for (let hour = startHour; hour <= endHour; hour++) {
+        const option = document.createElement('option');
+        option.value = hour;
+        option.textContent = String(hour).padStart(2, '0');
+        hourSelect.appendChild(option);
+    }
 }
 
+// כשמשנים תאריך
+dateInput.addEventListener('change', updateHours);
+
+
+/* ===========================
+   FORM SUBMISSION LOGIC
+=========================== */
+async function handleSubmit() {
+    const form = document.getElementById('contactForm');
+    const inputs = form.querySelectorAll('input, textarea');
+    const btn = document.querySelector('.submit-btn');
+    const successMsg = document.getElementById('formSuccess');
+
+    let isValid = true;
+
+    // Standard empty field validation
+    inputs.forEach(input => {
+        if (input.type === "hidden" || input.name === "botcheck") return;
+
+        if (!input.value.trim()) {
+            input.style.borderColor = '#e05050';
+            isValid = false;
+        } else {
+            input.style.borderColor = '';
+        }
+    });
+
+
+    if (!isValid) return;
+
+    // Update UI state
+    btn.textContent = 'שולח...';
+    btn.disabled = true;
+
+    const formData = new FormData(form);
+
+    const hour = formData.get('hour');
+    const minute = formData.get('minute');
+    const time = `${hour}:${minute}`;
+
+    const message = formData.get('message');
+    
+    const date = formData.get('date');
+    const [year, month, day] = date.split('-');
+    const newDate = `${day}/${month}/${year}`;
+
+    formData.delete('date');
+    formData.delete('hour');
+    formData.delete('minute');
+    formData.delete('message');
+    formData.append('date', newDate);
+    formData.append('time', `${hour}:${minute}`);
+    formData.append('message', message);
+
+
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            form.reset();
+            successMsg.style.display = 'block';
+            setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
+        } else {
+            console.error("Submission error:", data);
+        }
+    } catch (err) {
+        console.error("Network error:", err);
+    } finally {
+        btn.textContent = 'שלח הזמנה';
+        btn.disabled = false;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contactForm');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // חשוב מאוד
+    handleSubmit();
+  });
+});
