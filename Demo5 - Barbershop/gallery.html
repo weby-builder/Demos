@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="גלריית עבודות של ישראלי ברברשופ — תספורות קלאסיות, Skin Fade, עיצוב זקן ועוד." />
+  <title>גלריה | ישראלי ברברשופ</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-main">ישראלי</span>
+        <span class="nav-logo-sub">Barbershop &amp; Studio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">ראשי</a></li>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="gallery.html" class="active">גלריה</a></li>
+        <li><a href="pricing.html">מחירון</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
+      <a href="" target="_blank" rel="noopener" class="btn btn-primary nav-book"><span>קביעת תור</span></a>
+      <button class="hamburger" aria-label="תפריט"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">ראשי</a>
+    <a href="about.html">אודות</a>
+    <a href="gallery.html">גלריה</a>
+    <a href="pricing.html">מחירון</a>
+    <a href="contact.html">צור קשר</a>
+    <a href="" target="_blank" rel="noopener" style="color:var(--gold);margin-top:0.5rem;">קביעת תור ←</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-label">עבודות נבחרות</div>
+      <h1 class="page-hero-title">גלריית <span style="color:var(--gold);">עבודות</span></h1>
+      <p class="page-hero-sub">כל תמונה מספרת סיפור. כל תספורת — יצירת אמנות ייחודית.</p>
+      <div class="breadcrumb">
+        <a href="index.html">ראשי</a>
+        <i class="fa-solid fa-chevron-left" style="font-size:0.6rem;"></i>
+        <span>גלריה</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       GALLERY
+  ══════════════════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Filters -->
+      <div class="gallery-categories reveal">
+        <button class="gallery-filter active" data-filter="all">הכל</button>
+        <button class="gallery-filter" data-filter="classic">קלאסי</button>
+        <button class="gallery-filter" data-filter="fade">Fade</button>
+        <button class="gallery-filter" data-filter="beard">זקן</button>
+        <button class="gallery-filter" data-filter="modern">מודרני</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery-grid">
+
+        <div class="gallery-item reveal" data-category="classic">
+          <img src="images/classic-haircut.jpg" alt="תספורת קלאסית" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">קלאסי קצר</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-1" data-category="fade">
+          <img src="images/skin-fade.png" alt="Skin Fade" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">Skin Fade</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-2" data-category="beard">
+          <img src="images/beard-style.jpg" alt="עיצוב זקן" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">עיצוב זקן מלא</span></div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="modern">
+          <img src="images/regular-haircut.jpg" alt="תספורת מודרנית" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">מודרני — Drop Fade</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-1" data-category="classic">
+          <img src="images/classic-haircut-old-style.jpg" alt="תספורת בסלון" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">קלאסי מסורתי</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-2" data-category="fade">
+          <img src="images/high-fade.jpg" alt="High Fade" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">High Fade</span></div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="beard">
+          <img src="images/beard-shave.jpg" alt="גילוח זקן" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">גילוח ישיר</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-1" data-category="modern">
+          <img src="images/textured-crop.jpg" alt="תספורת מודרנית" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">Textured Crop</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-2" data-category="classic">
+          <img src="images/classic-line.jpg" alt="ספרות קלאסית" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">קלאסי עם קו</span></div>
+        </div>
+
+        <div class="gallery-item reveal" data-category="fade">
+          <img src="images/IG5.jpg" alt="Mid Fade" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">Mid Fade</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-1" data-category="beard">
+          <img src="images/short-beard.jpg" alt="זקן קצר" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">זקן מעוצב קצר</span></div>
+        </div>
+
+        <div class="gallery-item reveal reveal-delay-2" data-category="modern">
+          <img src="images/french-crop.jpg" alt="תספורת טרנדית" />
+          <div class="gallery-item-overlay"><span class="gallery-item-label">French Crop</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="סגור">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <img src="" alt="תמונה מוגדלת" class="lightbox-img" id="lightboxImg" />
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="cta-title reveal">מוכן לקבוע תור?</h2>
+      <p class="cta-subtitle reveal reveal-delay-1">קביעה מהירה ופשוטה — אנחנו מחכים לך</p>
+      <div class="cta-actions reveal reveal-delay-2">
+        <a href="" target="_blank" rel="noopener" class="btn btn-primary"><span><i class="fa-regular fa-calendar-check"></i> קביעת תור אונליין</span></a>
+        <a href="tel:+" class="btn btn-outline"><i class="fa-solid fa-phone"></i> 050-000-0000</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">ישראלי ברברשופ</div>
+          <div class="footer-brand-tag">Barbershop &amp; Studio</div>
+          <p class="footer-brand-desc">ספרות גברים ברמה הגבוהה ביותר בתל אביב.</p>
+          <div class="footer-socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="" target="_blank" rel="noopener" class="footer-social"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">ניווט מהיר</div>
+          <ul class="footer-links">
+            <li><a href="index.html">ראשי</a></li>
+            <li><a href="about.html">אודות</a></li>
+            <li><a href="gallery.html">גלריה</a></li>
+            <li><a href="pricing.html">מחירון</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">שעות פעילות</div>
+          <div class="footer-hours-row"><span>ראשון – חמישי</span><span class="hours-time">10:00–20:00</span></div>
+          <div class="footer-hours-row"><span>שישי</span><span class="hours-time">09:00–15:00</span></div>
+          <div class="footer-hours-row"><span>שבת</span><span class="hours-closed">סגור</span></div>
+        </div>
+        <div>
+          <div class="footer-col-title">יצירת קשר</div>
+          <ul class="footer-links">
+            <li><a href="tel:"><i class="fa-solid fa-phone" style="color:var(--gold);margin-left:0.5rem;"></i>050-000-0000</a></li>
+            <li><a href="" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" style="color:var(--gold);margin-left:0.5rem;"></i>וואטסאפ</a></li>
+            <li style="color:var(--text-muted);font-size:0.85rem;"><i class="fa-solid fa-location-dot" style="color:var(--gold);margin-left:0.5rem;"></i>דיזנגוף 1000, תל אביב</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 ישראלי ברברשופ · כל הזכויות שמורות</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-buttons">
+    <a href="" target="_blank" rel="noopener" class="floating-btn floating-btn-whatsapp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="tel:" class="floating-btn floating-btn-phone"><i class="fa-solid fa-phone"></i></a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
