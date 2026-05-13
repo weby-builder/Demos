@@ -562,9 +562,28 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  align-items: stretch;
 }
+
+/* טאבלט */
+@media (max-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* מובייל */
+@media (max-width: 600px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   PRICING CARD (שיפור קטן ליציבות)
+   ============================================ */
 
 .pricing-card {
   background: var(--bg-secondary);
@@ -574,7 +593,14 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   transition: var(--transition);
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0; /* מונע שבירות בטקסט */
 }
+
+/* אפקט עליון */
 .pricing-card::before {
   content: '';
   position: absolute;
@@ -586,18 +612,31 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   transition: opacity 0.35s ease;
 }
+
+/* hover */
 .pricing-card:hover {
   border-color: rgba(212,175,55,0.3);
   transform: translateY(-4px);
   box-shadow: var(--shadow-gold), var(--shadow-card);
 }
-.pricing-card:hover::before { opacity: 1; }
 
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+/* featured card */
 .pricing-card.featured {
   border-color: rgba(212,175,55,0.4);
   background: linear-gradient(145deg, #1a1a1a, #141414);
 }
-.pricing-card.featured::before { opacity: 1; }
+
+.pricing-card.featured::before {
+  opacity: 1;
+}
+
+/* ============================================
+   ICON
+   ============================================ */
 
 .pricing-card-icon {
   width: 48px;
@@ -612,6 +651,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.3rem;
 }
 
+/* ============================================
+   BADGE
+   ============================================ */
+
 .featured-badge {
   position: absolute;
   top: 1.2rem;
@@ -625,21 +668,29 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px;
 }
 
+/* ============================================
+   TEXT
+   ============================================ */
+
 .pricing-card-title {
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
+
 .pricing-card-desc {
   font-size: 0.83rem;
   color: var(--text-muted);
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
+
+/* מחיר */
 .pricing-card-price {
   display: flex;
   align-items: baseline;
   gap: 0.3rem;
+  margin: 1rem 0;
 }
 .pricing-amount {
   font-size: 2rem;
