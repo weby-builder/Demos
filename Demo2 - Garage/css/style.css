@@ -5,26 +5,39 @@
 :root {
   --gold: #E8A000;
   --gold-light: #F5C842;
-  --gold-dim: rgba(232,160,0,0.12);
-  --gold-border: rgba(232,160,0,0.3);
-  --bg-dark: #0A0B0D;
-  --bg-card: #111418;
-  --bg-card2: #161B22;
-  --text-primary: #F0EDE8;
-  --text-secondary: #9A9490;
-  --text-muted: #5A5550;
-  --border: rgba(255,255,255,0.07);
-  --border-hover: rgba(232,160,0,0.4);
+  --gold-dim: rgba(232,160,0,0.10);
+  --gold-border: rgba(232,160,0,0.28);
+
+  /* 🔥 שיפור עיקרי — פחות שחור טהור */
+  --bg-dark: #12161C;        /* היה #0A0B0D */
+  --bg-card: #1A2028;        /* היה #111418 */
+  --bg-card2: #222A35;       /* היה #161B22 */
+
+  --text-primary: #F2F4F7;   /* קצת יותר חי */
+  --text-secondary: #B0B7C3; /* פחות אפור כהה */
+  --text-muted: #7C8594;
+
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(232,160,0,0.35);
+
   --radius: 12px;
   --radius-lg: 20px;
-  --shadow: 0 4px 32px rgba(0,0,0,0.5);
-  --glow: 0 0 60px rgba(232,160,0,0.15);
+
+  --shadow: 0 6px 30px rgba(0,0,0,0.35);
+  --glow: 0 0 50px rgba(232,160,0,0.12);
+
   --ff-display: 'Frank Ruhl Libre', serif;
   --ff-body: 'Heebo', sans-serif;
+
   --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* בסיס */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 html {
   scroll-behavior: smooth;
