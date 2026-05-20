@@ -3,22 +3,25 @@
    ============================================= */
 
 :root {
-  --gold: #E8A000;
-  --gold-light: #F5C842;
-  --gold-dim: rgba(232,160,0,0.10);
-  --gold-border: rgba(232,160,0,0.28);
+  /* ✨ GOLD */
+  --gold: #D89A1D;
+  --gold-light: #F0C35A;
+  --gold-dim: rgba(216,154,29,0.12);
+  --gold-border: rgba(216,154,29,0.30);
 
-  /* 🔥 שיפור עיקרי — פחות שחור טהור */
-  --bg-dark: #12161C;        /* היה #0A0B0D */
-  --bg-card: #1A2028;        /* היה #111418 */
-  --bg-card2: #222A35;       /* היה #161B22 */
+  /* 🌑 BACKGROUNDS — חמים ורכים יותר */
+  --bg-dark: #171515;
+  --bg-card: #211E1E;
+  --bg-card2: #2A2626;
 
-  --text-primary: #F2F4F7;   /* קצת יותר חי */
-  --text-secondary: #B0B7C3; /* פחות אפור כהה */
-  --text-muted: #7C8594;
+  /* 📝 TEXT */
+  --text-primary: #F5F1EA;
+  --text-secondary: #C4B8AA;
+  --text-muted: #8F8478;
 
-  --border: rgba(255,255,255,0.08);
-  --border-hover: rgba(232,160,0,0.35);
+  /* 🔲 BORDERS */
+  --border: rgba(255,255,255,0.06);
+  --border-hover: rgba(216,154,29,0.35);
 
   --radius: 12px;
   --radius-lg: 20px;
@@ -28,6 +31,7 @@
 
   --ff-display: 'Frank Ruhl Libre', serif;
   --ff-body: 'Heebo', sans-serif;
+  --ff-2: 'Rubik Dirt';
 
   --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
 }
@@ -81,11 +85,12 @@ a { text-decoration: none; color: inherit; }
   margin: 0 auto;
   padding: 1.2rem 2rem;
 }
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
+.nav__logo {
+    width: 200px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right; 
 }
 .logo-icon { width: 36px; height: 36px; }
 .logo-text {
@@ -228,9 +233,9 @@ a { text-decoration: none; color: inherit; }
   50% { opacity: 0.5; transform: scale(1.5); }
 }
 .hero-title {
-  font-family: var(--ff-display);
+  font-family: var(--ff-2);
   font-size: clamp(3.5rem, 8vw, 7rem);
-  font-weight: 900;
+  font-weight: 200;
   line-height: 0.95;
   letter-spacing: -0.03em;
   margin-bottom: 1.5rem;
